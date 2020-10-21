@@ -1,0 +1,11 @@
+<h2>Welcome, <%=current_user.username%>!</h2>
+<%=no_venues%>
+
+<%= @venues.each do |venue|%>
+<li>
+<p><%=venue.concert.name%></p>
+<p><%=venue.concert.city%></p>
+<p><%=venue.concert.state%></p>
+<p><%=venue.concert.capacity%></p>
+</li>
+<%end%>

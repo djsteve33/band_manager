@@ -25,8 +25,7 @@ class VenuesController < ApplicationController
         else
             current_user.@concert.venues
         end
-    end
-            
+    end            
 
     private
 
