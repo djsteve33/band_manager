@@ -21,18 +21,18 @@ class ConcertsController < ApplicationController
         end
     end
 
-    # def edit
-    # end
+    def edit
+    end
 
-    # def update
-    #     @concert.update(params.require(:concert).permit(:band_name, :date, :start_time, :user_id, :venue_id)
-    #     redirect_to @concert
-    # end
+    def update
+        @concert.update(params.require(:concert).permit(:band_name, :date, :start_time, :user_id, :venue_id)
+        redirect_to @concert
+    end
 
-    # def destroy
-    #     @concert.destroy
-    #     redirect_to concerts_path
-    # end
+    def destroy
+        @concert.destroy
+        redirect_to concerts_path
+    end
 
     private
 
@@ -43,10 +43,6 @@ class ConcertsController < ApplicationController
     def set_concert
         @concert = Concert.find_by_id(params[:id])
     end
-
-
-
-
 end
 
 
