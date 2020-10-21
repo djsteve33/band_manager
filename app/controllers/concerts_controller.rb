@@ -5,8 +5,8 @@ class ConcertsController < ApplicationController
         @concerts = Concert.all
     end
 
-    # def show
-    # end
+    def show
+    end
 
     def new
         @concert = Concert.new
@@ -34,15 +34,15 @@ class ConcertsController < ApplicationController
     #     redirect_to concerts_path
     # end
 
-    # private
+    private
 
     def concert_params
         params.require(:concert).permit(:band_name, :date, :start_time)
     end
 
-    # def set_concert
-    #     @concert = Concert.find_by_id(params[:id])
-    # end
+    def set_concert
+        @concert = Concert.find_by_id(params[:id])
+    end
 
 
 
