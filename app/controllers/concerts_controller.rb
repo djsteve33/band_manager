@@ -25,7 +25,7 @@ class ConcertsController < ApplicationController
     end
 
     def update
-        @concert.update(params.require(:concert).permit(:band_name, :date, :start_time, :user_id, :venue_id)
+        @concert.update(params.require(:concert).permit(:band_name, :date, :start_time)
         redirect_to @concert
     end
 

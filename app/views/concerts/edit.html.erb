@@ -1,2 +1,21 @@
 <h1>Edit a Creepy Thing!</h1>
 <%=render ‘form’, concert: @concert%>
+
+<%if @concert.errors.any?%>
+<h2>
+<%= pluralize(@concert.errors.count, “error”) %>
+Prohibited this concert from being saved:
+</h2>
+<ul>
+<%concert.errors.full_messages.each do |msg|
+<li><%=msg%></li>
+<%end%>
+</ul>
+<%end%>
+<%=render ‘form’, concert: @concert%>
+<style>
+.field_with_errors > input {
+Border: 1px solid red}
+.field_with_errors > label {
+Color: red }
+</style>
