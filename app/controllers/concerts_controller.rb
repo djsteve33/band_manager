@@ -8,18 +8,18 @@ class ConcertsController < ApplicationController
     # def show
     # end
 
-    # def new
-    #     @concert = Concert.new
-    # end
+    def new
+        @concert = Concert.new
+    end
 
-    # def create
-    #     @concert = Concert.new(concert_params)
-    #     if @concert.save
-    #     redirect_to concert_path(@concert)
-    #     else
-    #     render :new
-    #     end
-    # end
+    def create
+        @concert = Concert.new(concert_params)
+        if @concert.save
+        redirect_to concert_path(@concert)
+        else
+        render :new
+        end
+    end
 
     # def edit
     # end
@@ -36,10 +36,9 @@ class ConcertsController < ApplicationController
 
     # private
 
-    # def concert_params
-    #     params.require[:concert].permit(:band_name, :date, :start_time, :user_id, :venue_id,
-    #     venues_attributes: [:name, :city, :state, :capacity])
-    # end
+    def concert_params
+        params.require(:concert).permit(:band_name, :date, :start_time)
+    end
 
     # def set_concert
     #     @concert = Concert.find_by_id(params[:id])
