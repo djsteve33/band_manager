@@ -3,3 +3,6 @@
 <p>State: <%=@venue.state%></p>
 <p>Capacity: <%=@venue.capacity%></p>
 <a href=”<%=concert_path(@venue.concert)%>”More Info</a>
+<%=link_to “All Venues”, [@concert, :venues]%>
+<%=link_to “Add Venue”, [:new, @concert, :venues]%>
+
