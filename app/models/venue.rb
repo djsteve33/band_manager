@@ -1,7 +1,7 @@
 class Venue < ApplicationRecord
     has_many :concerts
     has_many :users, through: :concerts
-    accepts_nested_attributes_for :concert
+    accepts_nested_attributes_for :concerts
 
     def self.find_by_user_id(id)
     where(user_id: id)
