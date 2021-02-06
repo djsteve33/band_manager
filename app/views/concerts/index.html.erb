@@ -1,5 +1,5 @@
-<h1>All the Concerts</h1>
-<% @concerts.each do |concert|%>
-<p><%= link_to concert.band_name, concert_path(concert)%></p>
-<% end %>
-<%=link_to “Add Concert”, new_concert_path%>
+# <h1>All the Concerts</h1>
+# <% @concerts.each do |concert|%>
+# <p><%= link_to concert.band_name, concert_path(concert)%></p>
+# <% end %>
+# <%=link_to "Add Concert", new_concert_path(@concerts) %>

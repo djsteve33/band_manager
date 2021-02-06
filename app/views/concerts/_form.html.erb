@@ -1,20 +1,20 @@
-<%=form_for concert do |f| %>
-<%=f.label "Band Name:"%>
-<%=f.text_field :band_name%>
-<%=f.label "Date:"%>
-<%=f.text_field :date%>
-<%=f.label "Start Time:"%>
-<%=f.text_field :start_time %>
-<h3>Add Venue (optional)</h3>
-<%=f.fields_for :venues, Venue.new do |venue_field|%>
-<%=venue_field.label :name%>
-<%=venue_field.text_field :name%>
-<$=venue_field.label :city%>
-<%=venue_field.text_field :city%>
-<$=venue_field.label :state%>
-<%=venue_field.text_field :state%>
-<$=venue_field.label :capcity%>
-<%=venue_field.number_field :capacity%>
-<%end%>
-<%=f.submit%>
-<%end%>
+# <%=form_for concert do |f| %>
+# <%=f.label "Band Name:"%>
+# <%=f.text_field :band_name%>
+# <%=f.label "Date:"%>
+# <%=f.text_field :date%>
+# <%=f.label "Start Time:"%>
+# <%=f.text_field :start_time %>
+# <h3>Add Venue</h3>
+# <%=f.fields_for :venues, Venue.new do |venue_field|%>
+# <%=venue_field.label :name%>
+# <%=venue_field.text_field :name%>
+# <%=venue_field.label :city%>
+# <%=venue_field.text_field :city%>
+# <%=venue_field.label :state%>
+# <%=venue_field.text_field :state%>
+# <%=venue_field.label :capcity%>
+# <%=venue_field.number_field :capacity%>
+# <%end%>
+# <%=f.submit%>
+# <%end%>

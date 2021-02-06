@@ -1,10 +1,13 @@
-class ApplicationController < ActionController::Base
-    helper_method :current_user
+# class ApplicationController < ActionController::Base
+#     # Prevent CSRF attacks by raising an exception.
+#     protect_from_forgery with: :exception
 
-    private
+#     helper_method :current_user
 
-    def current_user
-    @user ||= User.find_by_id(session[:user_id])
-    end
+#     private
 
-end
+#     def current_user
+#     @user ||= User.find_by_id(session[:user_id])
+#     end
+
+# end
