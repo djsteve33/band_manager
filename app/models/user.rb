@@ -5,10 +5,12 @@ class User < ApplicationRecord
 #     validates :username, presence: true
 #     validates :username, uniqueness: true
 
-#     def self.from_omniauth(response)
-#         User.find_or_create_by(username: auth[:info][:email]) do |user|
-#         user.pasword = SecureRandom.hex(15)
-#         end
-#     end
+    def self.create_from_omniauth(auth)
+        User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+         u.username = auth['info']['first_name']
+         u.email = auth['info']['email']
+         u.password = SecureRandom.hex(12)
+        end 
+    end 
         
 end
