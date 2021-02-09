@@ -1,4 +1,4 @@
-# class VenuesController < ApplicationController
+class VenuesController < ApplicationController
 #     before_action :set_concert
 #     before_action :set_venue, only: [:show]
 
@@ -41,4 +41,4 @@
 #     @venue = @concert.venue.find_by_id(params[:id])
 #     end
 
-# end
+end

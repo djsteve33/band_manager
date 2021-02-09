@@ -1,4 +1,4 @@
-# class Venue < ApplicationRecord
+class Venue < ApplicationRecord
 #     has_many :concerts
 #     has_many :users, through: :concerts
 #     accepts_nested_attributes_for :concerts
@@ -17,4 +17,4 @@
 #     save
 #     end
 
-# end
+end
