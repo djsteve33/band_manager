@@ -1,4 +1,4 @@
-# class ConcertsController < ApplicationController
+class ConcertsController < ApplicationController
 #     before_action :set_concert, only: [:show, :edit, :update, :destroy]
  
 #     def index
@@ -44,6 +44,6 @@
 #     def set_concert
 #         @concert = Concert.find_by_id(params[:id])
 #     end
-# end
+end
 
 

@@ -1,4 +1,4 @@
-# class SessionsController < ApplicationController
+class SessionsController < ApplicationController
 #     def new
 #     end
 
@@ -33,4 +33,4 @@
 #     # request.env[‘omniauth.auth’]
 #     # end
 
-# end
+end
