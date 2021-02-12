@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   # get '/venue/new', to: 'venues#new'
 
-  # resources :venues do
-  #   resources :concerts
-  # end
+  resources :venues do
+    resources :concerts, shallow: true
+  end
 end
