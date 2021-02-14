@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
-  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+  get '/auth/provider/callback', to: 'sessions#omniauth'
 
-  resources :concerts
+  resources :concerts, only: [:index, :new]
   resources :users, :only => [:new, :create]
   #resources :venues
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
