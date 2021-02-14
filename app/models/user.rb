@@ -4,7 +4,7 @@ class User < ApplicationRecord
     has_many :venues, through: :concerts
 
     validates :username, :email, presence: true
-    validates :email, uniqueness: true
+    validates :username, :email, uniqueness: true
     validates :password, length: { in: 5..10 }
 
     def self.create_from_omniauth(auth)
