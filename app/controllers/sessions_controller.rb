@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
     def welcome
-
+        if logged_in?
+            redirect_to user_path(current_user)
+        end
     end
 
     def create
@@ -15,12 +17,19 @@ class SessionsController < ApplicationController
      end
 
     def omniauth
-     user = User.from_omniauth(request.env['omniauth.auth'])
-        if user.valid?
-        session[:user_id] = user.id
-        redirect_to user_path(user)
+        user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+            u.username = auth['info']['first_name']
+            u.email = auth['info']['email']
+            u.password = SecureRandom.hex(12)
+        if user.save
+            session[:user_id] = user.id
+            redirect_to new_concert_path
         else
-        redirect_to '/login'
+            flash[:message] = user.errors.full_messages.join(", ")
+            #@concerts = Concert.all
+            #redirect_to concerts_path
+            #render 'concerts/index'
+            redirect_to concerts_path
         end
     end
 
@@ -32,7 +41,7 @@ class SessionsController < ApplicationController
     private
 
     def auth
-    request.env[‘omniauth.auth’]
+        request.env[‘omniauth.auth’]
     end
 
 end
