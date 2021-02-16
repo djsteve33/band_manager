@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
-#     before_action :set_concert
-#     before_action :set_venue, only: [:show]
+#     before_action :set_concert, only: [:show, :update, :edit, :destroy]
+#     before_action :set_venue, only: [:show, :update, :edit, :destroy]
       before_action :redirect_if_not_logged_in
 
 #     def new
