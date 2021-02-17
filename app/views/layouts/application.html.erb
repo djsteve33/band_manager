@@ -28,13 +28,10 @@
 
 </div>
 
-<div>
-  <% if flash[:message] %>
-      <%= flash[:message]%>
 
+  <% if flash[:alert] %>
+  <div class="field_with_errors"><%= flash[:alert] %></div>
   <% end %>
-  <%= @error%>
-</div>
-    <%= yield %>
+  <%= yield %>
   </body>
 </html>

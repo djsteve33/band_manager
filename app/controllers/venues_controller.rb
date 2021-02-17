@@ -3,9 +3,22 @@ class VenuesController < ApplicationController
 #     before_action :set_venue, only: [:show, :update, :edit, :destroy]
       before_action :redirect_if_not_logged_in
 
-#     def new
-#     @venue = @concert.venues.new
-#     end
+      def new
+            if params[:user_id] && @user = User.find_by_id(params[:user_id])
+                  @venue = @user.venues.build
+            else
+                  @venue = Venue.new
+            end
+      end
+
+      def index
+            if params[:user_id] && @user = User.find_by_id(params[:user_id])
+                  @venues = @user.venues.alpha
+            else
+                  @error = "That user doen't exist" if params[:user_id]
+            end
+      end     
+
 
 #     def create
 #     @venue = current_user.@concert.venues.build(venue_params)
@@ -20,13 +33,7 @@ class VenuesController < ApplicationController
 #     @venue = Venue.find_by_id(params[:id])
 #     end
 
-#     def index
-#         @venuees = if params[:concert_id]
-#             Venue.find_by_concert_id(params[:concert_id]).alpha_order
-#         else
-#             current_user.@concert.venues
-#         end
-#     end            
+#    
 
 #     private
 
@@ -35,11 +42,11 @@ class VenuesController < ApplicationController
 #     end
 
 #     def set_concert
-#     @concert= Concert.find_by_id(params[:concert_id])
+#     @concert= Venue.find_by_id(params[:id])
 #     end
 
 #     def set_venue
-#     @venue = @concert.venue.find_by_id(params[:id])
+#     @venue = .find_by_id(params[:id])
 #     end
 
 end

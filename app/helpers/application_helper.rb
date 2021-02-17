@@ -8,12 +8,8 @@ module ApplicationHelper
         !!current_user
     end
 
-    def render_nav_bar
-        if logged_in?
-          render partial: 'layouts/logged_in'
-        else
-          render partial: 'layouts/logged_out'
-        end
-      end
+    def redirect_if_not_logged_in
+        redirect_to '/' if !logged_in?
+     end
 
 end

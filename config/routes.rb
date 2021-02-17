@@ -5,16 +5,16 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   #get '/users/:id', to: 'users#show', as 'user'
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
   
 
-  delete '/logout' => 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
   get '/auth/provider/callback', to: 'sessions#omniauth'
 
-  resources :concerts, only: [:index, :new]
-  resources :users, :only => [:new, :create]
+  resources :concerts, only: [:index, :new, :create]
+  resources :users, only: [:new, :create]
   #resources :venues
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
