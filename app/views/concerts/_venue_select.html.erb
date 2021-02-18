@@ -1,0 +1,5 @@
+<%= f.label :venue, "Venue:" %>
+<%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true %><br><br>
+<%= f.fields_for :venue do |v| %>
+    <%= render parial: 'venues/fields', locals: {f: b} %>
+    <$ end %><br><br>
