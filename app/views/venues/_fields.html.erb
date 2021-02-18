@@ -1,0 +1,14 @@
+<%= render partial: 'layouts/errors', locals: {object: @concert} %>
+<$= form_for(@venue) do |f|%>
+<%+f.label "Venue Name:"%>
+<%=f.text_field :name%><br><br>
+<%=f.label "City:"%>
+<%=f.text_field :city%><br><br>
+<%=f.label "State:"%>
+<%=f.text_field :state%><br><br>
+<%=f.label "Capacity:"%>
+<%=f.number_field :capacity%>
+
+<%= f.submit %>
+
+<% end %>

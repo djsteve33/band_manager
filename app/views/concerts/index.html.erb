@@ -1,13 +1,12 @@
-<%= flash[:alert] %>
 <%= display_header %>
 <% if @venue %>
-    <%= link_to Create a new concert for this venue", new_venue_concert_path(@venue) %>
-    <% else %>
-   <%= link_to("Create Concert", new_concert_path) %>
-   <% end %>
+  <h1>Concerts for <%= @venue.name%></h1>
+<% else %>
+  <h1>All Concerts</h1>
 
-# <h1>All the Concerts</h1>
-# <% @concerts.each do |concert|%>
-# <p><%= link_to concert.band_name, concert_path(concert)%></p>
-# <% end %>
-# <%=link_to "Add Concert", new_concert_path(@concerts) %>
+
+<ul>
+<% @concerts.each do |c|%>
+<% end %>
+</ul>
+
