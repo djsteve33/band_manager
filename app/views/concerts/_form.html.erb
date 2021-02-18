@@ -1,20 +1,24 @@
+<%= render partial: 'layouts/errors', locals: {object: @concert} %>
 # <%=form_for concert do |f| %>
-# <%=f.label "Band Name:"%>
-# <%=f.text_field :band_name%>
-# <%=f.label "Date:"%>
-# <%=f.text_field :date%>
-# <%=f.label "Start Time:"%>
-# <%=f.text_field :start_time %>
-# <h3>Add Venue</h3>
+<%=f.label "Band Name:"%>
+<%=f.text_field :band_name%><br><br>
+<%=f.label "Date:"%>
+<%=f.text_field :date%><br><br>
+<%=f.label "Start Time:"%>
+<%=f.text_field :start_time %><br><br>
+ <h2>Add Venue</h2>
+<%= f.label :venue, "Venue:" %>
+<%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true %><br><br>
+<%= f.fields_for :venue do |v| %>
 # <%=f.fields_for :venues, Venue.new do |venue_field|%>
-# <%=venue_field.label :name%>
-# <%=venue_field.text_field :name%>
-# <%=venue_field.label :city%>
-# <%=venue_field.text_field :city%>
-# <%=venue_field.label :state%>
-# <%=venue_field.text_field :state%>
-# <%=venue_field.label :capcity%>
-# <%=venue_field.number_field :capacity%>
-# <%end%>
-# <%=f.submit%>
-# <%end%>
+<%+v.label "Venue Name:"%>
+<%=v.text_field :name%><br><br>
+<%=v.label "City:"%>
+<%=v.text_field :city%><br><br>
+<%=v.label "State:"%>
+<%=v.text_field :state%><br><br>
+<%=v.label "Capacity:"%>
+<%=v.number_field :capacity%>
+<%end%>
+<%=f.submit%>
+<%end%>

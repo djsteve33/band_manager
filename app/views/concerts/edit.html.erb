@@ -1,5 +1,7 @@
-# <h1>Edit a Creepy Thing!</h1>
-# <%=render ‘form’, concert: @concert%>
+# <h1>Edit Concert</h1>
+<%= render partial: 'layouts/errors', locals: {object: @concert} %>
+
+<%=render ‘form’ %>
 
 # <%if @concert.errors.any?%>
 # <h2>

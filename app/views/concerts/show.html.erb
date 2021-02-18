@@ -1,7 +1,7 @@
-# <%=link_to “Home”, concerts_path%>
-# <p>Band Name:<%=@concert.band_name%></p>
-# <p>Date:%=@concert.date%></p>
-# <p>Start Time:%=@concert.start_time%></p>
-# <%=link_to “Edit”, edit_concert_path(@concert)%>
-# <%=button_to “Delete”, concert_path(@concert), method: :delete%>
+<h2><%= @concert%> - <%= @concert.user.username%></h2>
+
+<% if @concert.user == current_user %>
+  <%= link_to "Edit Concert", edit_concert_path(@concert)%>
+<% end %>
+<%= link_to('Delete Concert', concert_path(@concert), method: 'delete') %>
 
