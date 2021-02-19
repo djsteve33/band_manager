@@ -1,11 +1,7 @@
-<h2>Welcome, <%=current_user.username%>!</h2>
-<%=no_venues%>
-
-<%= @venues.each do |venue|%>
-<li>
-<p><%=venue.concert.name%></p>
-<p><%=venue.concert.city%></p>
-<p><%=venue.concert.state%></p>
-<p><%=venue.concert.capacity%></p>
-</li>
-<%end%>
+<h1>All the Venues </h1>
+<% @venues.each do |venue|  %>
+    <div>
+        <%= link_to(venue.name, venue_path(venue))   %>
+    </div>
+<% end %><br>
+<%= link_to "Create Venue", new_venue_path %>

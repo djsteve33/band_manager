@@ -1,8 +1,11 @@
-<h3><%=@venue.concert.name%></h3>
-<p>City: <%=@venue.city%></p>
-<p>State: <%=@venue.state%></p>
-<p>Capacity: <%=@venue.capacity%></p>
-<a href=”<%=concert_path(@venue.concert)%>”More Info</a>
-<%=link_to “All Venues”, [@concert, :venues]%>
-<%=link_to “Add Venue”, [:new, @concert, :venues]%>
+<h1><%=@venue.name%></h1>
+<h2>Added by: <%=link_to @venue.user.username, user_path(@venue.user)%> </h2>
+
+<% if @venue.user == current_user %>
+<h4><%= link_to "Edit Venue", edit_venue_path(@venue)%></h4>
+<% end %>
+
+<p><%= link_to 'Add a new concert', new_venue_concert_path(@venue)%></p>
+<%= link_to('Delete Venue', venue_path(@venue), method: 'delete') %>
+
 
