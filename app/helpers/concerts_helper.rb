@@ -2,7 +2,7 @@ module ConcertsHelper
 
     def display_header
         if @venue 
-            tag.h2("All the #{@venue.name}'s Concerts")
+            tag.h2("#{@venue.name}'s Concerts")
         else
             tag.h1("All the Concerts")
         end 

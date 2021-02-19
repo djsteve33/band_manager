@@ -68,7 +68,7 @@ class VenuesController < ApplicationController
 #     end
 
     def set_venue
-    @venue = .find_by(id: params[:id])
+    @venue = Venue.find_by(id: params[:id])
     end
 
 end

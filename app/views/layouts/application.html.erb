@@ -15,7 +15,6 @@
   <% if logged_in?%>
   <%= link_to "Add a Venue", new_venue_path %> |
   <%= link_to "All Venues", venues_path %> |
-  <%= link_to "My Venues", user_venues_path(current_user) %> |
   <%= link_to "Add a Concert", new_concert_path %> |
   <%= link_to "All Concerts", concerts_path %> |
   <%= link_to "Home", user_path(current_user)%> |

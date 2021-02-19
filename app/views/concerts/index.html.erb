@@ -1,8 +1,10 @@
 <%= display_header %>
-<% if @venue %>
-<%= link_to "Add a new concert for this venue", new_venue_concert_path(@venue) %>
-<% else %>
-<%= link_to("Add Concert", new_concert_path )%>
+
+<ul>
+<% @concerts.each do |c|%>
+  <div><%= link_to c.band_name, venue_path(c.venue_id) %></li>
 <% end %>
+</ul>
+
 
 

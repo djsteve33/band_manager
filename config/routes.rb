@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/auth/provider/callback', to: 'sessions#omniauth'
 
   resources :concerts, only: [:index, :new, :create]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :show, :create]
   #resources :venues
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

@@ -1,5 +1,5 @@
 <%= render partial: 'layouts/errors', locals: {object: @concert} %>
-# <%=form_for concert do |f| %>
+<%=form_for @concert do |f| %>
 <%=f.label "Band Name:"%>
 <%=f.text_field :band_name%><br><br>
 <%=f.label "Date:"%>
@@ -10,8 +10,7 @@
 <%= f.label :venue, "Venue:" %>
 <%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true %><br><br>
 <%= f.fields_for :venue do |v| %>
-# <%=f.fields_for :venues, Venue.new do |venue_field|%>
-<%+v.label "Venue Name:"%>
+<%=v.label "Venue Name:"%>
 <%=v.text_field :name%><br><br>
 <%=v.label "City:"%>
 <%=v.text_field :city%><br><br>
@@ -19,6 +18,6 @@
 <%=v.text_field :state%><br><br>
 <%=v.label "Capacity:"%>
 <%=v.number_field :capacity%>
-<%end%>
+<% end %>
 <%=f.submit%>
-<%end%>
+<% end %>

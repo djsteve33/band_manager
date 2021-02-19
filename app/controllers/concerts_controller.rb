@@ -19,7 +19,7 @@ class ConcertsController < ApplicationController
         if params[:venue_id] && @venue = Venue.find_by_id(params[:venue_id])
             @concerts = @venue.concerts.build
         else
-            @error = "That venue doesn't exist" if params[venue_id]
+            @error = "That venue doesn't exist" if params[:venue_id]
             @concert = Concert.new
         end
     end

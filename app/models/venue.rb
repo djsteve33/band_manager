@@ -3,7 +3,7 @@ class Venue < ApplicationRecord
     has_many :users, through: :concerts
     accepts_nested_attributes_for :concerts
 
-    scope :alpha, -> { order(:name 'asc')}
+    scope :alpha, -> { order(name: 'asc')}
 
 #     def self.find_by_user_id(id)
 #     where(user_id: id)
