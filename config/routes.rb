@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
-  get '/auth/provider/callback', to: 'sessions#omniauth'
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
   resources :concerts, only: [:index, :new, :create]
   resources :users, only: [:new, :show, :create]

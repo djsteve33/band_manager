@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
 #     before_action :set_concert, only: [:show, :update, :edit, :destroy]
-      before_action :set_venue, only: [:show, :update, :edit, :destroy]
+      # before_action :set_venue, only: [:show, :update, :edit, :destroy]
       before_action :redirect_if_not_logged_in
 
       def new
@@ -47,7 +47,7 @@ class VenuesController < ApplicationController
     
       def show
       @venue = Venue.find_by_id(params[:id])
-      redirect_to venues_path if !@venue
+      redirect_to venue_path(@venue) if !@venue
       end
 
       def destroy

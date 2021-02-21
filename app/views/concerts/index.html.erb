@@ -1,10 +1,9 @@
 <%= display_header %>
 
-<ul>
 <% @concerts.each do |c|%>
-  <div><%= link_to c.band_name, venue_path(c.venue_id) %></li>
+  <div><%= link_to c.band_name, venue_path(c.venue_id) %> | <%= c.date %></div>
 <% end %>
-</ul>
+
 
 
 

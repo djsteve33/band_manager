@@ -1,7 +1,7 @@
 <%= render partial: 'layouts/errors', locals: {object: @venue} %>
 <%= form_for(@venue) do |f|%>
-<%=f.label "Venue Name:"%>
-<%=f.text_field :name%><br><br>
+<%= f.label :venue, "Select a venue:" %>
+<%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true %><br><br>
 <%=f.label "City:"%>
 <%=f.text_field :city%><br><br>
 <%=f.label "State:"%>

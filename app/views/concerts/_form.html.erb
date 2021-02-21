@@ -6,9 +6,7 @@
 <%=f.text_field :date%><br><br>
 <%=f.label "Start Time:"%>
 <%=f.text_field :start_time %><br><br>
- <h2>Add Venue</h2>
-<%= f.label :venue, "Venue:" %>
-<%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true %><br><br>
+ <p>Add Venue</p>
 <%= f.fields_for :venue do |v| %>
 <%=v.label "Venue Name:"%>
 <%=v.text_field :name%><br><br>

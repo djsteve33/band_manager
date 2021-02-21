@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
     before_action :redirect_if_not_logged_in
-    before_action :set_concert, only: [:show, :edit, :update, :destroy]
-    before_action :redirect_if_not_concert_manager, only: [:edit, :update]
+    # before_action :set_concert, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_if_not_concert_manager, only: [:show, :edit, :update, :destroy]
  
     def index
         if params[:venue_id] && @venue = Venue.find_by_id(params[:venue_id])
@@ -25,6 +25,7 @@ class ConcertsController < ApplicationController
     end
 
     def create
+        byebug
         @concert = current_user.concerts.build(concert_params)        
         if @concert.save
             redirect_to concerts_path
@@ -37,6 +38,7 @@ class ConcertsController < ApplicationController
     end
 
     def update
+        @concert = Concert.find(params[:id])
         if @concert.update(concert_params)
             redirect_to concert_path(@concert)
         else
@@ -64,7 +66,8 @@ class ConcertsController < ApplicationController
     end
 
     def redirect_if_not_concert_manager
-        redirect_to concerts_path if @concert.user != current_user
+        if @concert.user != current_user
+            redirect_to user_path(current_user), alert: "You can't edit this concert!"
     end
 
 
