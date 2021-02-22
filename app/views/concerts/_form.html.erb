@@ -1,21 +1,13 @@
 <%= render partial: 'layouts/errors', locals: {object: @concert} %>
-<%=form_for @concert do |f| %>
-<%=f.label :band_name, "Band Name:"%>
-<%=f.text_field :band_name%><br><br>
-<%=f.label :date, "Date:"%>
-<%=f.date_field :date%><br><br>
-<%=f.label :start_time, "Start Time:"%>
-<%=f.time_field :start_time %><br><br>
- <p>Add Venue</p>
-<%= f.fields_for :venue do |v| %>
-<%=v.label "Venue Name:"%>
-<%=v.text_field :name%><br><br>
-<%=v.label "City:"%>
-<%=v.text_field :city%><br><br>
-<%=v.label "State:"%>
-<%=v.text_field :state%><br><br>
-<%=v.label "Capacity:"%>
-<%=v.number_field :capacity%>
-<% end %>
-<%=f.submit%>
+<%=form_with(model: @concert) do |f| %>
+  <%= display_venue_fields(f) %>
+    <%=f.label :band_name, "Band Name:" %>
+    <%=f.text_field :band_name%><br><br>
+    <%=f.label :date, "Date:"%>
+    <%=f.date_field :date%><br><br>
+    <%=f.label :start_time, "Start Time:"%>
+    <%=f.time_field :start_time %><br><br>
+
+    <%=f.submit%>
+    
 <% end %>
