@@ -29,5 +29,5 @@ Rails.application.routes.draw do
   resources :venues do
     resources :concerts, shallow: true
   end
-  resources :concerts, only: [:index,:show, :new, :create], :edit, :update
+  resources :concerts, only: [:index,:show, :new, :create, :edit, :update]
 end

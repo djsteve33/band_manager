@@ -25,7 +25,6 @@ class ConcertsController < ApplicationController
     end
 
     def create
-        byebug
         @concert = current_user.concerts.build(concert_params)        
         if @concert.save
             redirect_to concerts_path

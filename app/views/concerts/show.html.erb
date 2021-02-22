@@ -1,7 +1,7 @@
-<h2><%= @concert%> - <%= @concert.user.username%></h2>
+<%= render @concert %>
 
 <% if @concert.user == current_user %>
-  <%= link_to "Edit Concert", edit_concert_path(@concert)%>
-<% end %>
+<%= link_to "Edit Concert", edit_concert_path(@concert) %> |
 <%= link_to('Delete Concert', concert_path(@concert), method: 'delete') %>
+<% end %>
 

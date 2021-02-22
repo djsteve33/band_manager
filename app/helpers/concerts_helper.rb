@@ -9,10 +9,10 @@ module ConcertsHelper
     end 
 
     def display_venue_fields(t)
-        if params(:venue_id)
+        if params[:venue_id]
             t.hidden_field :venue_id
         else
-            render partial: 'venue_select', locals: (f: t)
+            render partial: 'venue_select', locals: {f: t}
         end
     end
 
