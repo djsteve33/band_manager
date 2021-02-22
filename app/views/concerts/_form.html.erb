@@ -1,11 +1,11 @@
 <%= render partial: 'layouts/errors', locals: {object: @concert} %>
 <%=form_for @concert do |f| %>
-<%=f.label "Band Name:"%>
+<%=f.label :band_name, "Band Name:"%>
 <%=f.text_field :band_name%><br><br>
-<%=f.label "Date:"%>
-<%=f.text_field :date%><br><br>
-<%=f.label "Start Time:"%>
-<%=f.text_field :start_time %><br><br>
+<%=f.label :date, "Date:"%>
+<%=f.date_field :date%><br><br>
+<%=f.label :start_time, "Start Time:"%>
+<%=f.time_field :start_time %><br><br>
  <p>Add Venue</p>
 <%= f.fields_for :venue do |v| %>
 <%=v.label "Venue Name:"%>

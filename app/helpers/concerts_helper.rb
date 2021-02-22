@@ -8,6 +8,14 @@ module ConcertsHelper
         end 
     end 
 
+    def display_venue_fields(t)
+        if params(:venue_id)
+            t.hidden_field :venue_id
+        else
+            render partial: 'venue_select', locals: (f: t)
+        end
+    end
+
     def display_nested_header
         if params[:venue_id]
             "Create a new #{@venue.name} concert"

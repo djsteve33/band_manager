@@ -13,8 +13,7 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
-  resources :concerts, only: [:index, :new, :create]
-  resources :users, only: [:new, :show, :create]
+   resources :users, only: [:new, :show, :create]
   #resources :venues
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -30,4 +29,5 @@ Rails.application.routes.draw do
   resources :venues do
     resources :concerts, shallow: true
   end
+  resources :concerts, only: [:index,:show, :new, :create], :edit, :update
 end
