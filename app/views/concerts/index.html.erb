@@ -1,7 +1,10 @@
+<%= flash[:alert] %>
 <%= display_header %>
-
-<% @concerts.each do |c|%>
-  <div><%= link_to c.band_name, venue_path(c.venue_id) %> | <%= c.date %></div>
+<%= render partial: 'concert', collection: @concerts  %> 
+<% if @bvenue %>
+    <%= link_to "Create a new concert for this venue", new_venue_concert_path(@venue) %>
+    <% else %>
+<%= link_to("Create Concert", new_concert_path)%>
 <% end %>
 
 
