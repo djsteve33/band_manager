@@ -1,3 +1,16 @@
-<h1>Add A Venue</h1>
+<h1>Add A New Venue</h1>
 
-<%= render 'fields' %>
+<%= render partial: 'layouts/errors', locals: {object: @venue} %>
+
+<%= form_with model: @venue, local: true do |f| %>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %><br><br>
+    <%=f.label :city, "City:"%>
+    <%=f.text_field :city%><br><br>
+    <%=f.label :state, "State:"%>
+    <%=f.text_field :state%><br><br>
+    <%=f.label :capacity, "Capacity:"%>
+    <%=f.number_field :capacity%>
+
+    <%= f.submit  %>
+    <% end %>

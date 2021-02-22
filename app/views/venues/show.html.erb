@@ -1,11 +1,9 @@
-<h1><%=@venue.name%></h1>
-<h2>Added by: <%=link_to @venue.user.username, user_path(@venue.user)%> </h2>
+<h1><%=@venue.name%> - Added by: <%=link_to @venue.user.username, user_path(@venue.user)%> </h1>
+<%= link_to('Delete Venue', venue_path(@venue), method: 'delete') %>
 
 <% if @venue.user == current_user %>
-<h4><%= link_to "Edit Venue", edit_venue_path(@venue)%></h4>
-<% end %>
-
+<%= render @venue.concerts %>
 <p><%= link_to 'Add a new concert', new_venue_concert_path(@venue)%></p>
-<%= link_to('Delete Venue', venue_path(@venue), method: 'delete') %>
+<% end %>
 
 
