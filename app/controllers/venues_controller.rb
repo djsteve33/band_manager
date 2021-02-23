@@ -16,6 +16,7 @@ class VenuesController < ApplicationController
                   @venues = @user.venues.alpha
             else
                   @error = "That user doen't exist" if params[:user_id]
+                  @venues = Venue.alpha
             end
       end     
 

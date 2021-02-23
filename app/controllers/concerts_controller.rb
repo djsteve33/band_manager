@@ -1,13 +1,13 @@
 class ConcertsController < ApplicationController
     before_action :redirect_if_not_logged_in
     # before_action :set_concert, only: [:show, :edit, :update, :destroy]
-    before_action :redirect_if_not_concert_manager, only: [:show, :edit, :update, :destroy]
+    #before_action :find_concert, :redirect_if_not_concert_manager, only: [:show, :edit, :update, :destroy]
  
     def index
         if params[:venue_id] && @venue = Venue.find_by_id(params[:venue_id])
             @concerts = @venue.concerts.order_by_date
         else
-            @error = "That venue doesn't exist" if params[venue_id]
+            @error = "That venue doesn't exist" if params[:venue_id]
             @concert = Concert.all
         end        
     end
@@ -17,10 +17,11 @@ class ConcertsController < ApplicationController
 
     def new
         if params[:venue_id] && @venue = Venue.find_by_id(params[:venue_id])
-            @concerts = @venue.concerts.build
+            @concert = @venue.concerts.build
         else
-            @error = "That venue doesn't exist" if params[:venue_id]
+            #@error = "That venue doesn't exist" if params[:venue_id]
             @concert = Concert.new
+            @concert.build_venue
         end
     end
 
@@ -29,6 +30,7 @@ class ConcertsController < ApplicationController
         if @concert.save
             redirect_to concerts_path
         else
+            @venue = Venue.find_by_id(params[:id]) if params[:venue_id] != ""
             render :new
         end
     end
@@ -65,9 +67,14 @@ class ConcertsController < ApplicationController
         end
     end
 
+    def find_concert
+        @concert = Concert.find(params[:id])
+    end
+
     def redirect_if_not_concert_manager
         if @concert.user != current_user
             redirect_to user_path(current_user), alert: "You can't edit this concert!"
+        end
     end
 
 
