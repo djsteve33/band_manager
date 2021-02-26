@@ -8,7 +8,7 @@ class ConcertsController < ApplicationController
             @concerts = @venue.concerts.order_by_date
         else
             @error = "That venue doesn't exist" if params[:venue_id]
-            @concert = Concert.all
+            @concert = Concert.all.order_by_date
         end        
     end
 
