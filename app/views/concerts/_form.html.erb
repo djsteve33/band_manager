@@ -1,5 +1,5 @@
 <%= render partial: 'layouts/errors', locals: {object: @concert} %>
-<%=form_with(model: @concert) do |f| %>
+<%=form_for(@concert) do |f| %>
   <%= display_venue_fields(f) %>
     <%=f.label :band_name, "Band Name:" %>
     <%=f.text_field :band_name%><br><br>

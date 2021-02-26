@@ -18,7 +18,7 @@ module ConcertsHelper
 
     def display_nested_header
         if params[:venue_id]
-            "Create a new #{@venue.name} concert"
+            "Create a new concert for #{@venue.name}"
         else
             "Create New Concert"
         end 

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   # get '/venue/new', to: 'venues#new'
 
-  #resources :concerts
+  resources :concerts, only: [:index, :new, :create]
 
   resources :venues do
     resources :concerts, shallow: true

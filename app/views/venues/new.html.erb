@@ -2,7 +2,7 @@
 
 <%= render partial: 'layouts/errors', locals: {object: @venue} %>
 
-<%= form_with model: @venue, local: true do |f| %>
+<%= form_for(@venue) do |f| %>
     <%= f.label :name, "Name:" %>
     <%= f.text_field :name %><br><br>
     <%=f.label :city, "City:"%>
