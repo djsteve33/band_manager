@@ -1,7 +1,7 @@
 <%= flash[:alert] %>
 <%= display_header %>
 <%= render partial: 'concert', collection: @concerts  %> 
-<% if @bvenue %>
+<% if @venue %>
     <%= link_to "Create a new concert for this venue", new_venue_concert_path(@venue) %>
     <% else %>
 <%= link_to("Create Concert", new_concert_path)%>

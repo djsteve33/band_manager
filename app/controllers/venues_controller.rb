@@ -32,12 +32,12 @@ class VenuesController < ApplicationController
 
     def edit
       @venue = Venue.find_by_id(params[:id])
-      redirect_to venues_path if !@venue || @venue.user !=current_user
+      #redirect_to venues_path if !@venue || @venue.user !=current_user
     end
 
     def update
       @venue = Venue.find_by(id: params[:id])
-      redirect_to venues_path if !@venue || @venue.user !=current_user
+      #redirect_to venues_path if !@venue || @venue.user !=current_user
       if @venue.update(venue_params)
             redirect_to venue_path(@venue)
       else

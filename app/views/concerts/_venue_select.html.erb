@@ -1,4 +1,4 @@
-<%= f.label :venue, "Venue:" %>
+<%= f.label :venue, "Venue Name:" %>
     <%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true %><br><br>
     <%= f.fields_for :venue do |v| %>
       <%= render partial: 'venues/fields', locals: {f: v} %>
