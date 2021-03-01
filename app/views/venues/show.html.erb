@@ -1,9 +1,9 @@
 <h1><%=@venue.name%></h1>
 
 <%= render @venue.concerts %>
-
+<% if @venue %>
 <%= link_to "Edit Venue", edit_venue_path(@venue) %> |
 <%= link_to('Delete Venue', venue_path(@venue), method: 'delete') %> |
 <%= link_to "All Venues", venues_path %> 
-
+<% end %>
 

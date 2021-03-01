@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BandManager</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= link_to "All Venues", venues_path %> |
+  <%= link_to "All Concerts", concerts_path %> |
+  <%= link_to "New Concert", new_concert_path %>
+  <%= yield %>
+  </body>
+</html>
