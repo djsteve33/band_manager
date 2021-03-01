@@ -24,4 +24,12 @@ module ConcertsHelper
         end 
     end 
 
+    def create_new_concert
+        <% if @venue %>
+            <%= link_to "Create a Concert", new_venue_concert_path(@venue) %>
+        <% else %>
+            <%= link_to("Create Concert", new_concert_path)%>
+        <% end %>
+    end
+
 end
