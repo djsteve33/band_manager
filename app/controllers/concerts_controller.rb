@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
-    before_action :redirect_if_not_logged_in
+    #before_action :redirect_if_not_logged_in
     # before_action :set_concert, only: [:show, :edit, :update, :destroy]
-    #before_action :find_concert, :redirect_if_not_concert_manager, only: [:show, :edit, :update, :destroy]
+    before_action :find_concert, :redirect_if_not_band_manager, only: [:show, :edit, :update, :destroy]
  
     def index
         if params[:venue_id] && @venue = Venue.find_by_id(params[:venue_id])
@@ -72,7 +72,7 @@ class ConcertsController < ApplicationController
         @concert = Concert.find(params[:id])
     end
 
-    def redirect_if_not_concert_manager
+    def redirect_if_not_band_manager
         if @concert.user != current_user
             redirect_to user_path(current_user), alert: "You can't edit this concert!"
         end

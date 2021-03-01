@@ -2,7 +2,7 @@ module ConcertsHelper
 
     def display_header
         if @venue 
-            tag.h2("All of #{@venue.name}'s Concerts")
+            tag.h2("All the #{@venue.name} Concerts")
         else
             tag.h1("All the Concerts")
         end 
@@ -25,11 +25,11 @@ module ConcertsHelper
     end 
 
     def create_new_concert
-        <% if @venue %>
-            <%= link_to "Create a Concert", new_venue_concert_path(@venue) %>
-        <% else %>
-            <%= link_to("Create Concert", new_concert_path)%>
-        <% end %>
+        if @venue 
+            link_to "Create a Concert", new_venue_concert_path(@venue)
+        else
+            link_to("Create Concert", new_concert_path)
+        end
     end
 
 end

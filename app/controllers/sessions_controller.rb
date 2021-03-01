@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def welcome
-              if logged_in?
+        if logged_in?
             redirect_to user_path(current_user)
         end
     end
@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
 
     def destroy
     session.delete(:user_id)
-    redirect_to root_path
+    redirect_to '/login'
     end
 
     private
