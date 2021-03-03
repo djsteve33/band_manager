@@ -2,6 +2,8 @@ class Venue < ApplicationRecord
     has_many :concerts, dependent: :destroy
     has_many :users, through: :concerts
     validates :name, uniqueness: {case_sensitive: false}
+    validates :name, :city, :state, :capacity, presence: true
+     
     #accepts_nested_attributes_for :concerts
 
     scope :alpha, -> { order(name: :asc)}
