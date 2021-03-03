@@ -17,3 +17,9 @@
  body {
      background-color: rgb(120, 246, 255);
  }
+
+ .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: inline;
+  }
