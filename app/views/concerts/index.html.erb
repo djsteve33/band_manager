@@ -1,6 +1,17 @@
 <%= display_header %>
-<%= render partial: 'concert', collection: @concerts  %> 
-<%= create_new_concert %>
+
+<% @concerts.each do |concert|  %>
+    <div>
+       <%= link_to(concert.concert_info, concerts_path) %>
+    </div>
+<% end %><br>
+
+<% if @venue %>
+    <%= link_to "Create a New Concert for this Venue", new_venue_concert_path(@venue) %>
+<% else %>
+    <%=link_to("Create Concert", new_concert_path)%>
+<% end %>
+
 
 
 
