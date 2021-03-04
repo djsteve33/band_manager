@@ -1,6 +1,4 @@
-# README
-
-#Band Manager
+# Band Manager
 
 ##Description
 With this application, the manager of a band can schedule and view upcoming concerts for their band. A concert can be created through the add a concert form. When creating the concert, the band manger will select a venue, the band’s name, the date of the concert, and the time of the concert. If a venue does not exist yet, you can also create a venue while creating the concert. If a venue does exist, you can simply select it from the selection menu. 
