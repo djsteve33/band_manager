@@ -12,12 +12,14 @@ class VenuesController < ApplicationController
       end
 
       def index
+           
             if params[:user_id] && @user = User.find_by_id(params[:user_id])
                   @venues = @user.venues.alpha
             else
                   @error = "That user doen't exist" if params[:user_id]
-                  @venues = Venue.alpha
+                  @venues = Venue.all.alpha
             end
+           
       end     
 
 

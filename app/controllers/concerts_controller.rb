@@ -4,17 +4,18 @@ class ConcertsController < ApplicationController
     layout 'concert'
     before_action :find_concert, :redirect_if_not_band_manager, only: [:show, :edit, :update, :destroy]
  
-    def index
+    def index      
         if params[:venue_id] && @venue = Venue.find_by_id(params[:venue_id])
             @concerts = @venue.concerts.ordered_by_date
         else
             @error = "That venue doesn't exist" if params[:venue_id]
-            @concerts = Concert.all.ordered_by_date
+            @concerts = Concert.ordered_by_date
         end        
     end
 
     def show
         @concert = Concert.find(params[:id])
+        
     end
 
     def new
@@ -28,7 +29,7 @@ class ConcertsController < ApplicationController
     end
 
     def create
-        @concert = current_user.concerts.build(concert_params)        
+        @concert = current_user.concerts.build(concert_params) 
         if @concert.save
             redirect_to concert_path(@concert)
         else
