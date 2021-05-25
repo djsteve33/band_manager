@@ -1,0 +1,20 @@
+<%= display_header %>
+
+<% @concerts.each do |concert|  %>
+    <div>
+       <%= link_to(concert.concert_info, concert_path(concert)) %>
+    </div>
+<% end %><br>
+
+<% if @venue %>
+    <%= link_to "Create a New Concert for this Venue", new_venue_concert_path(@venue) %> |
+<% else %>
+    <%=link_to("Create Concert", new_concert_path)%> |
+<% end %>
+<%= link_to "Home", user_path(current_user)%> |
+<%= link_to "Logout", logout_path, method:"delete"%>
+
+
+
+
+

@@ -1,0 +1,6 @@
+<h1>Edit Venue</h1>
+
+<%= form_for(@venue) do |f| %>
+    <%= render partial: 'fields', locals: {f: f} %>
+    <%= f.submit %>
+<% end %>

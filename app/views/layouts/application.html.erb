@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div>
+  <% if logged_in?%>
+  <%= link_to "Add a Venue", new_venue_path %> |
+  <%= link_to "All Venues", venues_path %> |
+  <%= link_to "Add a Concert", new_concert_path %> |
+  <%= link_to "All Concerts", concerts_path %> |
+  <%= link_to "Home", user_path(current_user)%> |
+  <%= link_to "Logout", logout_path, method:"delete"%>
+
+  <% else %>
+  <%=link_to "Sign Up", signup_path %> |
+  <%=link_to "Log In", login_path %>
+  <% end %>
+
+</div>
+
+
+  <% if flash[:message] %>
+  <div class="field_with_errors"><%= flash[:alert] %></div>
+  <% end %>
+  <%= yield %>
   </body>
 </html>

@@ -1,0 +1,9 @@
+<h2><%= @concert.band_name%> - <%= @concert.date%> - <%= @concert.start_time%> - <%= @concert.venue.name %></h2>
+
+
+
+<%= link_to "Edit Concert", edit_concert_path(@concert) %> |
+<%= link_to('Delete Concert', concert_path(@concert), method: 'delete') %>
+
+
+ 
