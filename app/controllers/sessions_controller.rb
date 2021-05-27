@@ -21,8 +21,9 @@ class SessionsController < ApplicationController
      end
 
     def omniauth
-        user = User.create_from_omniauth(auth)    
-        if user.save
+        user = User.create_from_omniauth(auth)  
+        #byebug  
+        if user
             session[:user_id] = user.id
             redirect_to user_path(user)
         else

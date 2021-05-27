@@ -1,7 +1,4 @@
 class ConcertsController < ApplicationController
-<<<<<<< HEAD
-end
-=======
     #before_action :redirect_if_not_logged_in
     # before_action :set_concert, only: [:show, :edit, :update, :destroy]
     layout 'concert'
@@ -87,4 +84,3 @@ end
 end
 
 
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337

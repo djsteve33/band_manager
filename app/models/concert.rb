@@ -1,6 +1,4 @@
 class Concert < ApplicationRecord
-<<<<<<< HEAD
-=======
     belongs_to :user
     belongs_to :venue
     #accepts_nested_attributes_for :venue
@@ -19,5 +17,4 @@ class Concert < ApplicationRecord
     end
 
 
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
 end

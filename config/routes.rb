@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  resources :concerts
-  resources :venues
-  resources :users
-=======
   root 'sessions#welcome'
 
   get '/signup', to: 'users#new'
@@ -20,7 +15,6 @@ Rails.application.routes.draw do
 
    resources :users, only: [:new, :show, :create]
   #resources :venues
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # get '/concerts', to: 'concerts#index'

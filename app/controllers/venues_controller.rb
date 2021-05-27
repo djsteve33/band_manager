@@ -1,6 +1,4 @@
 class VenuesController < ApplicationController
-<<<<<<< HEAD
-=======
 #     before_action :set_concert, only: [:show, :update, :edit, :destroy]
       before_action :set_venue, only: [:show, :update, :edit, :destroy]
       #before_action :redirect_if_not_logged_in
@@ -76,5 +74,4 @@ class VenuesController < ApplicationController
     @venue = Venue.find_by(id: params[:id])
     end
 
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
 end

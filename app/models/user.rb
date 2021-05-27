@@ -1,12 +1,10 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
-=======
     has_secure_password
     has_many :concerts
     has_many :venues, through: :concerts
 
     validates :username, :email, presence: true
-    validates :username, :email, uniqueness: true
+    validates :email, uniqueness: true
     
 
     def self.create_from_omniauth(auth)
@@ -17,5 +15,4 @@ class User < ApplicationRecord
         end 
     end 
         
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
 end

@@ -1,6 +1,4 @@
 class Venue < ApplicationRecord
-<<<<<<< HEAD
-=======
     has_many :concerts, dependent: :destroy
     has_many :users, through: :concerts
     validates :name, uniqueness: {case_sensitive: false}
@@ -24,5 +22,4 @@ class Venue < ApplicationRecord
 #     save
 #     end
 
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
 end

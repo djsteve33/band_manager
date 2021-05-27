@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
-=======
 
     def new
     @user = User.new
+    #byebug
     end
 
     def create
@@ -28,5 +27,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :email, :password)
     end
 
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
 end

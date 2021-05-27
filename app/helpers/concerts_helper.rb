@@ -1,6 +1,4 @@
 module ConcertsHelper
-<<<<<<< HEAD
-=======
 
     def display_header
         if @venue 
@@ -34,5 +32,4 @@ module ConcertsHelper
         end
     end
 
->>>>>>> b72f5c006d94026be6ed4a2df801950a6684c337
 end
