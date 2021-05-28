@@ -1,10 +1,10 @@
 <%= display_header %>
 
 <% @concerts.each do |concert|  %>
-    <div>
-       <%= link_to(concert.concert_info, concert_path(concert)) %>
-    </div>
-<% end %><br>
+    <ul>
+       <li><%= link_to(concert.concert_info, concert_path(concert)) %></li>
+   <% end %><br>
+   </ul>
 
 <% if @venue %>
     <%= link_to "Create a New Concert for this Venue", new_venue_concert_path(@venue) %> |
