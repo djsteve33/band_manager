@@ -17,7 +17,7 @@ When the program loads up in your browser, you will see the options of Sign Up, 
 
 # Acknowledgements
 
-I would like to thank my Flatiron Cohort leader, Charlotte Neff, for her contributions to my project.
+I would like to thank my Flatiron Cohort leaders, Charlotte Neff and DJ Richey, for their contributions to my project.
 
 # License
 
