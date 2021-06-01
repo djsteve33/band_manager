@@ -15,8 +15,8 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user)
         else
-            flash[:alert] = "Invalid credrntials. Please try again."
-            redirect_to "/login"
+            @error = "Invalid credrntials. Please try again."
+            render "sessions/new"
         end
      end
 
